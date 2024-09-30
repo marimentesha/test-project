@@ -1,0 +1,152 @@
+body {
+    background-color: #E5E4E7;
+    margin: 0;
+}
+
+nav {
+    background-color: darkgrey;
+    padding: 25px;
+
+}
+
+nav a:link, nav a:visited {
+    color: black;
+    text-decoration: none;
+    padding: 20px;
+}
+
+nav a:hover, nav a:active {
+    background-color: grey;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.bg { /*index*/
+    background-image: url("../images/photo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.bg2 {
+    background-image: url("../images/photo2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.bg3{
+    background-image: url("../images/photo3.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+a.selected {
+    background-color: dimgray;
+}
+
+a.posts {
+    text-decoration: none;
+    color: black;
+}
+
+a.posts:hover {
+    opacity: 0.5;
+}
+
+h1 {
+    font-family: Arial, serif;
+    margin: 0;
+    text-align: center;
+}
+
+h1.home {
+    font-family: Arial, serif;
+    margin: 200px 500px 100px 500px;
+    font-size: 50px;
+}
+
+p {
+    font-family: Arial, serif;
+    text-align: center;
+    font-size: x-large;
+    margin: 20px 400px
+}
+
+label {
+    display: block;
+    text-align: center;
+    margin: 10px 5px
+}
+
+input, select {
+    display: block;
+    margin: 0 auto;
+    font-size: 25px;
+}
+
+img {
+    padding: 10px;
+    margin: 10px 105px;
+}
+
+.container {
+    position: relative;
+    width: 400px;
+    height: 300px;
+}
+
+.image {
+    border-radius: 50%;
+    max-width: 35%;
+    padding:0;
+    margin: 50px 0 ;
+}
+
+.post {
+    float: left;
+    padding: 0;
+
+}
+
+.comment {
+    display: block;
+    margin: 20px;
+    border-style: solid;
+    border-color: gray;
+    font-size: medium;
+}
+
+.auth_button {
+    float: right;
+    margin: 0;
+    padding: 5px !important;
+}
+
+table, td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 15px;
+}
+
+.button {
+    border-color: #767676;
+    background-color: #efefef;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    text-decoration: none;
+    padding: 1px 4px;
+    color: black;
+    margin-left:1px
+}
