@@ -26,7 +26,6 @@
                     {{ $comment->comment}}
                 </div>
 
-                @if (auth())
                     <div style="float:right;">
                         @auth
                             @if (Auth::user()->id == $comment->user_id)
@@ -36,7 +35,6 @@
                         @endauth
                     </div>
                 @endif
-            @endif
 
             @if (request()->is("comment/$post->id/$comment->id/edit"))
                 <x-update-form uri="/comment/{{ $post->id}}/{{ $comment->id}}" style="margin:10px 10px;">
