@@ -37,7 +37,7 @@
         </a>
     @endauth
 </nav>
-<body {{$attributes}}>
+<body class="{{$background}}">
 
 <header>
     <div>

@@ -22,7 +22,7 @@ nav a:hover, nav a:active {
     cursor: pointer;
 }
 
-.bg { /*index*/
+.bg {
     background-image: url("../images/photo.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -36,8 +36,10 @@ nav a:hover, nav a:active {
     background-size: 100% 100%;
 }
 
+
 .bg3{
-    background-image: url("../images/photo3.png");
+    background-image: url("../images/photo3.jpg");
+    background-color: lightgray;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -149,4 +151,10 @@ th, td {
     padding: 1px 4px;
     color: black;
     margin-left:1px
+}
+
+.size {
+    width:350px;
+    height:100px;
+    float:left;
 }

@@ -1,10 +1,10 @@
 <x-admin-layout>
     <form action="/posts" method="post" enctype='multipart/form-data' style="margin-top: 50px">
         @csrf
-        <input type="text" name="title" placeholder="title">
+        <x-form-input name="title" type="text"/>
         <x-form-error name='title'/>
 
-        <input type="text" name="description" placeholder="description" style="margin-top: 10px;">
+        <x-form-input name="description" type="text"/>
         <x-form-error name='description'/>
 
         <input type="file" name="photo" style="margin-top:10px;margin-left:610px">

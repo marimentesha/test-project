@@ -8,7 +8,6 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
-use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {

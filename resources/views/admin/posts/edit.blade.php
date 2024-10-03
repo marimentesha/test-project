@@ -1,18 +1,14 @@
 <x-admin-layout>
 
-    <form action="<?= "/admin/posts/$post->id" ?>" enctype="multipart/form-data" method="post" style="margin-top: 50px">
-        @csrf
-        @method('PATCH')
-
-        <input type="text" name="title" placeholder='title' value="<?= $post->title ?>">
+    <x-update-form uri="/admin/posts/{{ $post->id }}" enctype="multipart/form-data" style="margin-top: 50px">
+        <x-form-input type="text" name="title" value="{{ $post->title }}"/>
         <x-form-error name="title" />
 
-        <input type="text" name="description" placeholder='description' value="<?= $post->description ?>"
-               style="margin-top: 10px;">
+        <x-form-input type="text" name="description" value="{{ $post->description }}"/>
         <x-form-error name="description" />
 
         <input type="file" name="image" style="margin-top:10px;margin-left:610px">
-        <x-form-error name="image"  />
+        <x-form-error name="image" />
 
         <select name="author_id" style="margin-top: 10px">
             @foreach ($authors as $author)
@@ -26,6 +22,7 @@
         <x-form-error name="author_id"/>
 
         <input type="submit" value="edit post!" style="margin-top: 10px;">
-    </form>
+
+    </x-update-form>
 
 </x-admin-layout>

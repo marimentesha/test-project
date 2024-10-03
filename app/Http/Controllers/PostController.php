@@ -9,7 +9,6 @@ use Illuminate\Contracts\View\{Factory, View};
 use Illuminate\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Redirector;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller

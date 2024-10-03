@@ -19,20 +19,14 @@
                 <td>{{ $post->author_id }}</td>
 
                 @if ($post->Author->user_id == Auth::user()->id && Auth::user()->role->name == 'blogger')
-                    <td><a href="/admin/posts/{{$post->id}}/edit">EDIT</a>
-                        <form method="post" action="/admin/posts/{{ $post->id }}">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Delete</button>
-                        </form>
+                    <td>
+                        <a href="/admin/posts/{{$post->id}}/edit" class="button">Edit</a>
+                        <x-delete-form uri="/admin/posts/{{ $post->id }}"/>
                     </td>
                 @elseif(Auth::user()->role->name == 'admin')
-                    <td><a href="/admin/posts/{{$post->id}}/edit">EDIT</a>
-                        <form method="post" action="/admin/posts/{{ $post->id }}">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit">Delete</button>
-                        </form>
+                    <td>
+                        <a href="/admin/posts/{{$post->id}}/edit" class="button">Edit</a>
+                        <x-delete-form uri="/admin/posts/{{ $post->id }}"/>
                     </td>
                 @endif
 

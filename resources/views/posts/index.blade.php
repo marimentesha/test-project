@@ -1,5 +1,6 @@
 <x-layout>
     <x-slot:heading> Posts</x-slot:heading>
+    <x-slot:background>bg3</x-slot:background>
 
     @foreach ($posts as $post)
         <a href=" {{"/posts/$post->id"}}" class="posts">

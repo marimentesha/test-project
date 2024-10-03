@@ -58,12 +58,12 @@ use Illuminate\Validation\ValidationException;
     {
         $attributes = request()->validate([
             'email' => 'required|email',
-            'password' => 'required|min:8',
+            'password' => 'required',
         ]);
 
         if (!Auth::attempt($attributes)) {
             throw ValidationException::withMessages([
-                'email' => 'Sorry, those credentials do not match.',
+                'password' => 'Sorry, those credentials do not match.',
             ]);
         }
 
