@@ -1,19 +1,18 @@
-<x-layout>
+<x-layout class="bg3">
     <x-slot:heading> Posts</x-slot:heading>
-    <x-slot:background>bg3</x-slot:background>
+    <div class="page">
+        <div class="posts">
+            @foreach ($posts as $post)
+                <a href=" {{"/posts/$post->id"}}" class="post-link">
+                    <x-post-pics :photo="asset('storage/' . $post->image)" class="post-pic"/>
+                    <h1>{{$post->author->first_name . " " . $post->author->last_name}}</h1>
+                    <p class="title"> {{$post->title}}</p>
+                </a>
+            @endforeach
+        </div>
 
-    @foreach ($posts as $post)
-        <a href=" {{"/posts/$post->id"}}" class="posts">
-            <h1 class="post">
-                {{$post->first_name . " " . $post->last_name}}
-                <x-post-pics :photo="asset('storage/' . $post->image)" style="height:200px;width:200px"/>
-            </h1>
-            <pre>
-            <p style="text-align:left;margin:100px"> {{$post->title}}</p>
-            </pre>
-        </a>
-    @endforeach
-    <div>
-        {{$posts->links()}}
+        <div class="paginate">
+            {{$posts->links()}}
+        </div>
     </div>
 </x-layout>

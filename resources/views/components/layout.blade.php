@@ -8,40 +8,37 @@
 
 </head>
 
-<nav>
-    <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-    <x-nav-link href="/posts" :active="request()->is('posts')">Posts</x-nav-link>
-    <x-nav-link href="/contact" :active="request()->is('contact')">Contact us</x-nav-link>
-
+<nav class="nav">
+    <x-nav-link href="/" :active="request()->is('/')" class="nav-link">Home</x-nav-link>
+    <x-nav-link href="/posts" :active="request()->is('posts')" class="nav-link">Posts</x-nav-link>
+    <x-nav-link href="/contact" :active="request()->is('contact')" class="nav-link">Contact us</x-nav-link>
+    <div class="nav-right">
     @guest
-        <x-auth-nav-link href="/register" :active="request()->is('register')" >Sign
-            up
-        </x-auth-nav-link>
-        <x-auth-nav-link href="/login" :active="request()->is('login')" >Login
-        </x-auth-nav-link>
+        <x-nav-link href="/register" :active="request()->is('register')" class="nav-link">Sign up</x-nav-link>
+        <x-nav-link href="/login" :active="request()->is('login')" class="nav-link">Login</x-nav-link>
     @endguest
 
     @auth
-        <x-auth-nav-link href="/users/{{Auth::user()->id}}" :active="request()->is('profile')" style="padding:0;border-radius:50%;width:25px;height:25px">
-                    <x-profile-picture :photo="asset('storage/' . auth()->user()->profile_photo)"
-                                       style="width:25px;height:25px;margin:2px;padding:0"/>
-        </x-auth-nav-link>
-        <a class="auth_button">
+        <x-nav-link  href="/users/{{Auth::user()->id}}" :active="request()->is('profile')">
+            <x-profile-picture :photo="asset('storage/' . auth()->user()->profile_photo)" class="profile-pic"/>
+        </x-nav-link>
+        <a>
             <form method="POST" action="/logout">
                 @csrf
-                <button
-                    style="background-color: darkgrey;border-style: hidden;float:right;padding:3px;">
-                    Log Out
+                <button class="logout">
+                    Log out
                 </button>
             </form>
         </a>
     @endauth
+    </div>
 </nav>
-<body class="{{$background}}">
+
+<body {{$attributes}}>
 
 <header>
     <div>
-        <h1 {{$attributes}}>{{$heading}}</h1>
+        <p class="main-title">{{$heading}}</p>
     </div>
 </header>
 <main>

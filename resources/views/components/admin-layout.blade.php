@@ -8,11 +8,11 @@
 </head>
 <body>
 
-<nav>
-    <x-nav-link href="/admin" :active="request()->is('admin')">Posts</x-nav-link>
-    <x-nav-link href="/admin/posts/create" :active="request()->is('admin/posts/create')">Create post</x-nav-link>
-    <x-nav-link href="/admin/authors" :active="request()->is('admin/authors')">Authors</x-nav-link>
-    <x-nav-link href="/admin/authors/create" :active="request()->is('admin/authors/create')">Create author</x-nav-link>
+<nav class="nav">
+    <x-nav-link href="/admin" :active="request()->is('admin')" class="nav-link">Posts</x-nav-link>
+    <x-nav-link href="/admin/posts/create" :active="request()->is('admin/posts/create')" class="nav-link">Create post</x-nav-link>
+    <x-nav-link href="/admin/authors" :active="request()->is('admin/authors')" class="nav-link">Authors</x-nav-link>
+    <x-nav-link href="/admin/authors/create" :active="request()->is('admin/authors/create')" class="nav-link">Create author</x-nav-link>
 </nav>
 <main>
     {{$slot}}

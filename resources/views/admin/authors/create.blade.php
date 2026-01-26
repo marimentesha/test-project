@@ -1,14 +1,20 @@
 <x-admin-layout>
 
-    <form action="/admin/authors" method="post" style="margin-top: 50px">
+    <h2 class="main-title">Create Author</h2>
+
+    <form action="/admin/authors" method="post" class="form">
         @csrf
-        <x-form-input name="first_name" type="text"/>
-        <x-form-error name="first_name"/>
-
-        <x-form-input name="last_name" type="text"/>
-        <x-form-error name="last_name"/>
-
-        <input type="submit" value="create author!" style="margin-top: 10px;">
+        <div class="form-item">
+            <x-form-input name="first_name" type="text" class="input"/>
+            <x-form-error name="first_name"/>
+        </div>
+        <div class="form-item">
+            <x-form-input name="last_name" type="text" class="input"/>
+            <x-form-error name="last_name"/>
+        </div>
+        <div class="form-item">
+            <input type="submit" value="create author!" class="admin-submit">
+        </div>
     </form>
 
 </x-admin-layout>

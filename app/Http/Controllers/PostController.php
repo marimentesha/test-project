@@ -15,7 +15,7 @@ class PostController extends Controller
 {
     public function index(): View|Factory|Application
     {
-        $posts = Post::with(['Author'])->simplePaginate(5);
+        $posts = Post::with(['Author'])->simplePaginate(10);
 
         return view('posts.index', ['posts' => $posts]);
     }

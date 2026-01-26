@@ -1,7 +1,7 @@
 @php use Illuminate\Support\Facades\Auth; @endphp
 <x-admin-layout>
 
-    <h2>Posts</h2>
+    <h2 class="main-title">Posts</h2>
     <table>
         <tr>
             <th>id</th>
@@ -20,13 +20,17 @@
 
                 @if ($post->Author->user_id == Auth::user()->id && Auth::user()->role->name == 'blogger')
                     <td>
-                        <a href="/admin/posts/{{$post->id}}/edit" class="button">Edit</a>
+                        <div class="edit-delete">
+                        <a href="/admin/posts/{{$post->id}}/edit" class="submit">Edit</a>
                         <x-delete-form uri="/admin/posts/{{ $post->id }}"/>
+                        </div>
                     </td>
                 @elseif(Auth::user()->role->name == 'admin')
                     <td>
-                        <a href="/admin/posts/{{$post->id}}/edit" class="button">Edit</a>
+                        <div class="edit-delete">
+                        <a href="/admin/posts/{{$post->id}}/edit" class="submit">Edit</a>
                         <x-delete-form uri="/admin/posts/{{ $post->id }}"/>
+                        </div>
                     </td>
                 @endif
 

@@ -1,28 +1,34 @@
 <x-admin-layout>
+    <h2 class="main-title">Edit Post</h2>
 
-    <x-update-form uri="/admin/posts/{{ $post->id }}" enctype="multipart/form-data" style="margin-top: 50px">
-        <x-form-input type="text" name="title" value="{{ $post->title }}"/>
-        <x-form-error name="title" />
+    <x-update-form uri="/admin/posts/{{ $post->id }}" enctype="multipart/form-data" class="form">
+        <div class="form-item">
+            <x-form-input type="text" name="title" value="{{ $post->title }}" class="input"/>
+            <x-form-error name="title"/>
+        </div>
+        <div class="form-item">
+            <x-form-input type="text" name="description" value="{{ $post->description }}" class="input"/>
+            <x-form-error name="description"/>
+        </div>
+        <div class="form-item">
+            <input type="file" name="image" class="input">
+            <x-form-error name="image"/>
+        </div>
+        <div class="form-item">
+            <select name="author_id">
+                @foreach ($authors as $author)
+                    <option value="{{ $author->id}}" {{$author->id == $post->author_id ? 'selected' : ''}}>
+                        {{ $author->first_name . ' ' . $author->last_name}}
+                    </option>
+                @endforeach
 
-        <x-form-input type="text" name="description" value="{{ $post->description }}"/>
-        <x-form-error name="description" />
-
-        <input type="file" name="image" style="margin-top:10px;margin-left:610px">
-        <x-form-error name="image" />
-
-        <select name="author_id" style="margin-top: 10px">
-            @foreach ($authors as $author)
-                <option value="{{ $author->id}}" {{$author->id == $post->author_id ? 'selected' : ''}}>
-                    {{ $author->first_name . ' ' . $author->last_name}}
-                </option>
-            @endforeach
-
-            <option value="" {{ $post->author_id !== null ? "" : "selected" }} >No Author!</option>
-        </select>
+                <option value="" {{ $post->author_id !== null ? "" : "selected" }} >No Author!</option>
+            </select>
+        </div>
         <x-form-error name="author_id"/>
-
-        <input type="submit" value="edit post!" style="margin-top: 10px;">
-
+        <div class="form-item">
+            <input type="submit" value="edit post!" class="admin-submit">
+        </div>
     </x-update-form>
 
 </x-admin-layout>
